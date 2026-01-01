@@ -13,7 +13,7 @@ You can also find more about me using the link below:
 
 - [X](https://x.com/xiyivan)
 - [github](https://github.com/xiyivan)
-- [Resume](/download/CV2.4.pdf)
+- [Resume](/assets/download/CV2.4.pdf)
 
 The website is build based on Jekyll, you can find the source code of Jekyll at Github:
 [jekyll][jekyll-organization] /

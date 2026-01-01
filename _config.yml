@@ -27,6 +27,10 @@ url: "https://xiyivan.github.io" # the base hostname & protocol for your site, e
 twitter_username: xiyivan
 github_username:  xiyivan
 
+favicon: assets/icons/favicon-96x96.png
+favicon_big: assets/icons/favicon-192x192.png
+favicon_biggest: assets/icons/favicon-512x512.png
+
 # Build settings
 theme: minima
 plugins:
