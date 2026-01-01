@@ -21,9 +21,7 @@
 title: Yifan's blog
 email: sunnyxiayf@126.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hi there, welcome to yifan's blog page. I mainly record the solutions
-  to issues I faced here. You can also expect to see some progress in projects
-  I am working on and achievement I got.
+  Documenting thoughts, progress, stories and achievements.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://xiyivan.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: xiyivan
