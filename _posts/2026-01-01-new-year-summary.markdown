@@ -2,7 +2,7 @@
 layout: post
 title:  "And so, a new year began"
 date:   2026-01-01 08:58:43 -0500
-categories: Daily Recap
+categories: personal
 ---
 
 迟到了9个小时的总结：
