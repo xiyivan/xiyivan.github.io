@@ -1,0 +1,21 @@
+---
+layout: page
+permalink: /categories
+title: Categories
+---
+
+<div class="categories">
+  {% for category in site.categories %}
+    <div class="category-item">
+      <h3>{{ category[0] }}</h3>
+      <span class="count">{{ category[1].size }} posts</span>
+      
+      <!-- Optional: List first few posts -->
+      <ul>
+        {% for post in category[1] limit:1 %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
