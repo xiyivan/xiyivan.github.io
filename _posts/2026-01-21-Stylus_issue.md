@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Fix: Surface Pen on ROG Flow 13 (KDE Plasma Wayland)"
-date:   2026-01-21 20:48:00 000
+date:   2026-01-21 20:48:00 0000
 categories: [tech]
 ---
 
