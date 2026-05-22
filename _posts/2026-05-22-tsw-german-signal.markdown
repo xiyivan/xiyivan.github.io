@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Learning note for german rail signal"
-date:   2026-02-19 22:34:25 0000
+date:   2026-05-22 22:01:00 0100
 categories: [game]
 ---
 
