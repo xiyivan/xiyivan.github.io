@@ -33,6 +33,7 @@ favicon_biggest: assets/icons/favicon-512x512.png
 
 # Build settings
 theme: minima
+future: true
 plugins:
   - jekyll-feed
 
