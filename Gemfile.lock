@@ -35,6 +35,7 @@ GEM
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
+    erb (6.0.4)
     ethon (0.15.0)
       ffi (>= 1.15.0)
     eventmachine (1.2.7)
@@ -322,6 +323,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  erb (~> 6.0)
   github-pages
   http_parser.rb (~> 0.6.0)
   jekyll-feed (~> 0.12)
@@ -346,6 +348,7 @@ CHECKSUMS
   dnsruby (1.73.1) sha256=6cf327f5fe2768deadb5e3f3e899ff1ae110aefcef43fef32e1e55e71289e992
   drb (2.2.3) sha256=0b00d6fdb50995fe4a45dea13663493c841112e4068656854646f418fda13373
   em-websocket (0.5.3) sha256=f56a92bde4e6cb879256d58ee31f124181f68f8887bd14d53d5d9a292758c6a8
+  erb (6.0.4) sha256=38e3803694be357fe2bfe312487c74beaf9fb4e5beb3e22498952fe1645b95d9
   ethon (0.15.0) sha256=0809805a035bc10f54162ca99f15ded49e428e0488bcfe1c08c821e18261a74d
   eventmachine (1.2.7) sha256=994016e42aa041477ba9cff45cbe50de2047f25dd418eba003e84f0d16560972
   execjs (2.10.0) sha256=6bcb8be8f0052ff9d370b65d1c080f2406656e150452a0abdb185a133048450d
