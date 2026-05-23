@@ -1,0 +1,125 @@
+/* ============================================================
+   Random full-page background with frosted-glass readability
+   Background is sharp everywhere; only the central text
+   column gets a blurred frosted-glass effect.
+   ============================================================ */
+
+/* Make html and body fill the viewport */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Override minima's solid background */
+body {
+  background-color: #1a1a2e;  /* fallback dark color while image loads */
+  position: relative;
+}
+
+/* Full-screen background layer — sharp, no blur */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+
+  /* The actual image is set via JS through the --bg-image custom property */
+  background-image: var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Slightly dim the background so white text areas pop */
+  filter: brightness(0.85);
+}
+
+/* ---- Header & footer: transparent, no blur ---- */
+.site-header {
+  background: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  padding-bottom: 8px;
+}
+
+.site-header .site-title,
+.site-header .site-title:visited {
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.site-header .page-link {
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.site-footer {
+  background: transparent;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ddd;
+}
+
+/* ---- Main content area: transparent strip ---- */
+.page-content {
+  background: transparent;
+  padding-top: 40px;
+}
+
+/* ---- The central text column: frosted glass ---- */
+.wrapper {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+/* ---- Code / blockquotes / tables (inside wrapper) ---- */
+code {
+  background-color: rgba(238, 238, 255, 0.85);
+}
+
+blockquote {
+  background: rgba(255, 255, 255, 0.5);
+  border-left-color: rgba(130, 130, 130, 0.6);
+}
+
+table {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+table th {
+  background-color: rgba(240, 240, 240, 0.85);
+}
+
+/* ---- Footer text readability ---- */
+.site-footer,
+.site-footer .footer-heading,
+.site-footer .contact-list,
+.site-footer .social-media-list,
+.site-footer a,
+.site-footer a:visited {
+  color: #eee;
+}
+
+/* ---- Mobile responsiveness ---- */
+@media screen and (max-width: 600px) {
+  .page-content {
+    padding-top: 20px;
+  }
+
+  .wrapper {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.78);
+    border-radius: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+}
