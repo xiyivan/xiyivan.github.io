@@ -1,0 +1,9 @@
+{%- if page.toc != false -%}
+<aside class="toc-sidebar" aria-label="Table of Contents">
+  <nav class="toc-nav">
+    <h4 class="toc-heading">Contents</h4>
+    <ul class="toc-list"></ul>
+  </nav>
+</aside>
+<script src="{{ '/assets/js/toc.js' | relative_url }}"></script>
+{%- endif -%}

@@ -5,12 +5,14 @@
 
   <body>
 
-    {%- include header.html -%}
-
     <main class="page-content" aria-label="Content">
+      {%- include header.html -%}
       <div class="wrapper">
         {{ content }}
       </div>
+      {%- if page.layout == 'post' -%}
+        {%- include toc.html -%}
+      {%- endif -%}
     </main>
 
     {%- include footer.html -%}

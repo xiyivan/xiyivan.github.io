@@ -29,8 +29,10 @@ layout: default
 </div>
 
 
-  <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+  <div class="post-body">
+    <div class="post-content e-content" itemprop="articleBody">
+      {{ content }}
+    </div>
   </div>
 
   {%- if site.disqus.shortname -%}

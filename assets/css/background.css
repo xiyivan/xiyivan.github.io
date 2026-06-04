@@ -39,21 +39,32 @@ body::before {
 }
 
 /* ---- Header & footer: transparent, no blur ---- */
+
+/* Header sits inside the flex container, spanning the full row */
 .site-header {
-  background: transparent;
+  flex: 0 0 100%;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 8px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  padding-bottom: 8px;
+  padding: 12px 0;
+}
+
+/* Header's inner wrapper matches the combined width of content + TOC */
+.site-header .wrapper {
+  max-width: 1044px;
 }
 
 .site-header .site-title,
 .site-header .site-title:visited {
-  color: #fff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  color: #111;
+  text-shadow: none;
 }
 
 .site-header .page-link {
-  color: #fff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  color: #424242;
+  text-shadow: none;
 }
 
 .site-footer {
@@ -62,14 +73,21 @@ body::before {
   color: #ddd;
 }
 
-/* ---- Main content area: transparent strip ---- */
+/* ---- Main content area: flex row for wrapper + TOC ---- */
 .page-content {
   background: transparent;
-  padding-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 40px 24px 0;
 }
 
 /* ---- The central text column: frosted glass ---- */
-.wrapper {
+
+/* Only target the main content wrapper, not header/footer wrappers */
+.page-content > .wrapper {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -78,6 +96,12 @@ body::before {
   padding-bottom: 20px;
   margin-top: 30px;
   margin-bottom: 30px;
+
+  /* Flex child: don't grow past 800px, but can shrink */
+  flex: 0 1 800px;
+  min-width: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 /* ---- Code / blockquotes / tables (inside wrapper) ---- */
@@ -160,18 +184,111 @@ table th {
   color: #eee;
 }
 
+/* ---- Table of Contents Sidebar ---- */
+
+/* Sits beside the wrapper in the same flex row — no overlap */
+.toc-sidebar {
+  position: sticky;
+  top: 20px;
+  flex: 0 0 220px;
+  width: 220px;
+
+  /* Match the main wrapper's frosted glass */
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  /* Font */
+  font-size: 0.85rem;
+  line-height: 1.5;
+
+  /* Scroll if too tall */
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+}
+
+.toc-heading {
+  margin: 0 0 10px 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #424242;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.toc-list .toc-sub {
+  list-style: none;
+  margin: 0;
+  padding-left: 14px;
+}
+
+.toc-link {
+  display: block;
+  padding: 3px 8px;
+  color: #555;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  border-radius: 0 4px 4px 0;
+  transition: all 0.15s ease;
+  word-wrap: break-word;
+}
+
+.toc-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.toc-link.active {
+  color: #0366d6;
+  font-weight: 600;
+  border-left-color: #0366d6;
+  background: rgba(3, 102, 214, 0.08);
+}
+
+.toc-h3 {
+  font-size: 0.8rem;
+  padding-left: 12px;
+}
+
+/* Hide TOC when the viewport is too narrow for both columns */
+@media screen and (max-width: 1050px) {
+  .toc-sidebar {
+    display: none;
+  }
+
+  /* Header inner wrapper shrinks back to content width when TOC is hidden */
+  .site-header .wrapper {
+    max-width: 800px;
+  }
+}
+
 /* ---- Mobile responsiveness ---- */
 @media screen and (max-width: 600px) {
   .page-content {
     padding-top: 20px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .wrapper {
+  .page-content > .wrapper {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     background: rgba(255, 255, 255, 0.78);
     border-radius: 0;
     margin-top: 16px;
     margin-bottom: 16px;
+    flex: 1 1 auto;
+  }
+
+  .site-header .wrapper {
+    max-width: 100%;
   }
 }
