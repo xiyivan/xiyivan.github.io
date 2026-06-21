@@ -37,29 +37,84 @@ where x is the number of images
 
 ## Variable initialization
 
-### Initialization statement
+### Declaration statement
 
-single variable initialization
+single variable declaration
 ```fortran
 data_type :: variable_name
 ```
 
-Array initialization
+Array declaration
 ```fortran
 data_type :: array_name(n)
 data_type, dimension(n) :: array_name
 ```
 Finally don't need to indexing with (y, x) lol
 
-Coarray initialization
+Dynamic array declaration
+```fortran
+data_type, allocatable :: array_name(:)
+```
+
+Coarray declaration
 ```fortran
 data_type :: array_name(n)[*]
 ```
 
-Constant initialization
+Constant declaration
 ```fortran
 data_type, parameter :: const_name = xxx
 ```
+
+### Allocation and Initialization of array
+
+Array initialization
+```fortran
+a = [(0, i = 1, 1000)]
+```
+
+Dynamic array allocation
+```fortran
+integer :: is = -5, ie = 10
+allocate(a(is:ie))
+```
+
+mold—A variable or an expression that has the same type as the object being
+allocated
+```fortran
+real, allocatable :: a(:), b(:)
+allocate(b(10:20))
+allocate(a, mold=b)
+a = 0
+```
+
+source—Equivalent to mold, except that the values of source are used to initial-
+ize the object being allocated
+```fortran
+real, allocatable :: a(:), b(:)
+b = [1.0, 2.0, 3.0]
+allocate(a, source=b)
+```
+
+**note**
+If you assign an array to an allocatable array variable, the target array variable is auto-matically allocated with the correct size to match the array on the right side. The array variable can be already allocated or not.
+
+clean use array after use
+```fortran
+deallocate(a)
+```
+
+check a array is allocated or not
+```fortran
+allocated(a)
+```
+
+Catching allocation
+```fortran
+allocate(u(im), stat=stat, errmsg=err)
+```
+stat—An integer that indicates the status of the allocate statement. stat will be zero if allocation was successful; otherwise, it will be a nonzero positive number.
+errmsg—A character string that contains the error message if an error occurred (such as stat being nonzero) and is undefined otherwise.
 
 ### Variable type
 
@@ -245,6 +300,34 @@ wait and sync
 ```fortran
 sync all
 ``` 
+
+## Coarray initialization
+
+scalar coarray
+```fortran
+real :: a[*]
+```
+
+array coarray
+```fortran
+real :: a(10)[*]
+```
+
+dynamic coarray
+```fortran
+real, allocable :: a(:)[:]
+```
+
+## Coarray operation
+
+assign value to coarray
+```fortran
+a = 3.14 !assign value to local image
+
+a[2] = 3.14 !assign value to indexed image
+```
+
+
 
 ## Parallel programming flow statements
 

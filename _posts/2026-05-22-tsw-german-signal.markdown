@@ -114,42 +114,42 @@ When reaching end of LZB section
 
 **Speed Post**
 
-![Speed Post](/assets/image/2026-05-22/speed-post.png)
+![Speed Post](https://img.xiyivan.com/2026/06/speed-post.png)
 
 Show speed limit divide by ten. Arrow above the post indicates the track this speed limit applies to.
 
 
 **Speed Limit Warning Post**
 
-![Speed List Warning Post](/assets/image/2026-05-22/speed-limit-warning-post.png)
+![Speed List Warning Post](https://img.xiyivan.com/2026/06/speed-limit-warning-post.png)
 
 Indicate the upcoming speed change. May contain pzb magnet.
 
 
 **Distance Marker Post**
 
-![Distance marker post](/assets/image/2026-05-22/distance-marker-post.png)
+![Distance marker post](https://img.xiyivan.com/2026/06/distance-marker-post.png)
 
 Represent distance to an upcoming signal. 3 stripes — 250m; 2 stripes — 175m; 1 stripe — 100m.
 
 
 **Hectometer Post**
 
-![Hectometer post](/assets/image/2026-05-22/hectometer-post.png)
+![Hectometer post](https://img.xiyivan.com/2026/06/hectometer-post.png)
 
 Exist every 200m. Indicate location from a location.
 
 
 **P Sign**
 
-![P sign](/assets/image/2026-05-22/p-sign.png)
+![P sign](https://img.xiyivan.com/2026/06/p-sign.png)
 
 Sound horn when passing P sign.
 
 
 **H Sign**
 
-![H sign](/assets/image/2026-05-22/h-sign.png)
+![H sign](https://img.xiyivan.com/2026/06/h-sign.png)
 
 Indicate stopping location.
 

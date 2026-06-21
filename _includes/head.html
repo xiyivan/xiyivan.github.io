@@ -33,25 +33,24 @@
   <!-- Random background image selection -->
   <script>
     (function() {
-      var bgDir = '{{ '/assets/image/background/' | relative_url }}';
       var images = [
-        'wallhaven-1kg8eg.jpg',
-        'wallhaven-d85kjl.jpg',
-        'wallhaven-dp39e3.jpg',
-        'wallhaven-exdewo.jpg',
-        'wallhaven-g71rd3.jpg',
-        'wallhaven-k87x31.jpg',
-        'wallhaven-nmpem9.jpg',
-        'wallhaven-rrleeq.jpg',
-        'wallhaven-x16yvo.jpg',
-        'wallhaven-y8k19d.jpg',
-        'wallhaven-y8k1k7.jpg',
-        'wallhaven-zp85do.png'
+        'https://img.xiyivan.com/background/wallhaven-x16yvo.jpg',
+        'https://img.xiyivan.com/background/wallhaven-y8k1k7.jpg',
+        'https://img.xiyivan.com/background/wallhaven-exdewo.jpg',
+        'https://img.xiyivan.com/background/wallhaven-rrleeq.jpg',
+        'https://img.xiyivan.com/background/wallhaven-k87x31.jpg',
+        'https://img.xiyivan.com/background/wallhaven-nmpem9.jpg',
+        'https://img.xiyivan.com/background/wallhaven-zp85do.png',
+        'https://img.xiyivan.com/background/wallhaven-d85kjl.jpg',
+        'https://img.xiyivan.com/background/wallhaven-y8k19d.jpg',
+        'https://img.xiyivan.com/background/wallhaven-dp39e3.jpg',
+        'https://img.xiyivan.com/background/wallhaven-g71rd3.jpg',
+        'https://img.xiyivan.com/background/wallhaven-1kg8eg.jpg'
       ];
       var pick = images[Math.floor(Math.random() * images.length)];
       document.documentElement.style.setProperty(
         '--bg-image',
-        'url(' + bgDir + pick + ')'
+        'url(' + pick + ')'
       );
     })();
   </script>
