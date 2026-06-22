@@ -7,13 +7,18 @@ title: Categories
 <div class="categories">
   {% for category in site.categories %}
     <div class="category-item">
-      <h3>{{ category[0] }}</h3>
+      {% assign category_slug = category[0] | slugify %}
+      <h3>
+        <a href="{{ '/categories/' | append: category_slug | append: '.html' | relative_url }}" style="color: #000;">
+          {{ category[0] }}
+        </a>
+      </h3>
       <span class="count">{{ category[1].size }} posts</span>
       
-      <!-- Optional: List first few posts -->
+      <!-- List the three most recent posts in this category. -->
       <ul>
-        {% for post in category[1] limit:1 %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% for post in category[1] limit:3 %}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
         {% endfor %}
       </ul>
     </div>

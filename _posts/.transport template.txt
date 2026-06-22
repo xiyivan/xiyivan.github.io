@@ -1,0 +1,10 @@
+- Train ID: 
+- System UID: 
+- Operator: 
+
+**Schedule**
+- Line: 
+- Service route: 
+- Travelled Segment: 
+- Platforms: 
+- Time: 

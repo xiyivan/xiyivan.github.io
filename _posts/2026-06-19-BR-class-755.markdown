@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "British Rail Class 755"
+date:   2026-06-19 20:39:00 0100
+categories: [transport]
+---
+## Spec
+- top speed: 100mph
+- manufacture: Stadler Rail
+- power type: Diesel Mechanical Multiple Unit(DMU)
+
+### 2026-06-22
+- Train ID: 2E72
+- System UID: P01499
+- Operator: Greater Anglia
+
+**Schedule**
+- Line: Ely–Peterborough line
+- Service route: Ely (ELY) -> Peterborough (PBO)
+- Travelled Segment: Ely (ELY) -> Peterborough (PBO)
+- Platforms: Plat.1@Ely; Plat.6@PBO
+- Time: 0852-0931/0853-0933 (on time)

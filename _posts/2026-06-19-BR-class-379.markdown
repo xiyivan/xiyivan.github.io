@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "British Rail Class 379 Electrostar"
+date:   2026-06-19 20:39:00 0100
+categories: [transport]
+---
+## Spec
+- top speed: 100mph
+- manufacture: Bombardier Transportation
+- power type: Electric Multiple Unit(EMU)
+
+![](https://upload.wikimedia.org/wikipedia/commons/d/d6/379010_%26_379028%2C_Finsbury_Park%2C_May_29th_2025.jpg)
+
+
+### 2026-06-14
+- Train ID: 2T08
+- System UID: C18391
+- Operator: Govia Thameslink Railway (Great Northern)
+
+**Schedule**
+- Line: Fen Line
+- Service route: Cambridge(CBG) -> Kings lynn(KLN)
+- Travelled Segment: Cambridge(CBG) -> Ely(ELY)
+- Platforms: Plat.4@CBG; Plat.2@ELY
+- Time: 0819-0837/0819-0837 (on time)
