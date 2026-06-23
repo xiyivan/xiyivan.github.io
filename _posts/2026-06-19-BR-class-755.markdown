@@ -20,3 +20,5 @@ categories: [transport]
 - Travelled Segment: Ely (ELY) -> Peterborough (PBO)
 - Platforms: Plat.1@Ely; Plat.6@PBO
 - Time: 0852-0931/0853-0933 (on time)
+
+![](https://img.xiyivan.com/2026/06/IMG20260614084303.jpg)
