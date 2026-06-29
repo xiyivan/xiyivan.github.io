@@ -9,6 +9,8 @@ categories: [transport]
 - manufacture: Stadler Rail
 - power type: Diesel Mechanical Multiple Unit(DMU)
 
+## Records
+
 ### 2026-06-22
 - Train ID: 2E72
 - System UID: P01499
