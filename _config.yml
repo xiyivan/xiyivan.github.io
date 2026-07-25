@@ -37,6 +37,10 @@ future: true
 plugins:
   - jekyll-feed
 
+# Utility source files live beside the transport posts but are not site content.
+exclude:
+  - _posts/util
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

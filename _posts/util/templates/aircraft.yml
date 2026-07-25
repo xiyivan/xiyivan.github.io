@@ -1,0 +1,85 @@
+# Shared form and Markdown layout for every aircraft-family post.
+type: aircraft
+aliases: [plane, airplane, aeroplane]
+post_markers: [Flight Number, Registration, Airline]
+
+duplicate:
+  # Same normalized Model within this departure-time window is rejected.
+  window_minutes: 60
+  model_fields: [model]
+  existing_model_labels: [Model, Model Number]
+
+punctuality:
+  # Early arrivals and arrivals no more than 15 minutes late are on time.
+  late_after: 15
+  labels:
+    early: Arriving Early
+    on_time: on time
+    late: Delayed
+
+record:
+  time_fields:
+    - actual_departure
+    - actual_arrival
+    - scheduled_departure
+    - scheduled_arrival
+  sections:
+    - name: Record
+      fields:
+        - {key: date, label: Date, required: true}
+        - {key: model, label: Model, required: true}
+        - {key: registration, label: Registration, required: true}
+        - {key: flight_number, label: Flight Number, required: true}
+        - {key: airline, label: Airline, required: true}
+    - name: Schedule
+      fields:
+        - {key: route_origin, label: Route origin, required: true}
+        - {key: route_destination, label: Route destination, required: true}
+        - {key: actual_departure, label: Actual departure, required: true}
+        - {key: actual_arrival, label: Actual arrival, required: true}
+        - {key: scheduled_departure, label: Scheduled departure, required: true}
+        - {key: scheduled_arrival, label: Scheduled arrival, required: true}
+    - name: Media
+      fields:
+        - {key: image_url, label: Image URL, required: false}
+  output_sections:
+    - source: Record
+      heading:
+      items:
+        - {kind: field, field: model, label: Model}
+        - {kind: field, field: registration, label: Registration}
+        - {kind: field, field: flight_number, label: Flight Number}
+        - {kind: field, field: airline, label: Airline}
+    - source: Schedule
+      heading: Schedule
+      items:
+        - kind: format
+          label: Route
+          format: "{route_origin} -> {route_destination}"
+        - kind: time
+          label: Time
+          format: "{actual_departure}-{actual_arrival}/{scheduled_departure}-{scheduled_arrival} ({status})"
+    - source: Media
+      heading:
+      items:
+        - {kind: image, field: image_url}
+
+about:
+  sections:
+    - name: Spec
+      fields:
+        - {key: manufacturer, label: manufacture, required: true}
+        - {key: engine_options, label: engine option, required: true}
+    - name: Media
+      fields:
+        - {key: image_url, label: Image URL, required: false}
+  output_sections:
+    - source: Spec
+      heading:
+      items:
+        - {kind: field, field: manufacturer, label: manufacture}
+        - {kind: field, field: engine_options, label: engine option}
+    - source: Media
+      heading:
+      items:
+        - {kind: image, field: image_url}

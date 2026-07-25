@@ -1,0 +1,103 @@
+# Shared form and Markdown layout for every rail-family post.
+type: rail
+aliases: [train, railway]
+post_markers: [Train ID, System UID, Service route, Travelled Segment]
+
+duplicate:
+  # Same normalized Model (or the page model when blank) within this window is rejected.
+  window_minutes: 60
+  model_fields: [model]
+  existing_model_labels: [Model, Model Number]
+
+punctuality:
+  early_at_or_before: -5
+  late_at_or_after: 5
+  labels:
+    early: Arriving Early
+    on_time: on time
+    late: Delayed
+
+record:
+  time_fields:
+    - actual_departure
+    - actual_arrival
+    - scheduled_departure
+    - scheduled_arrival
+  paired_fields:
+    - [departure_platform, arrival_platform]
+  sections:
+    - name: Record
+      fields:
+        - {key: date, label: Date, required: true}
+        - {key: train_id, label: Train ID, required: true}
+        - {key: system_uid, label: System UID, required: false}
+        - {key: model, label: Model, required: false}
+        - {key: manufacturer, label: Manufacture, required: false}
+        - {key: operator, label: Operator, required: true}
+    - name: Schedule
+      fields:
+        - {key: line, label: Line, required: true}
+        - {key: service_origin, label: Service route origin, required: true}
+        - {key: service_destination, label: Service route destination, required: true}
+        - {key: travelled_origin, label: Travelled segment origin, required: true}
+        - {key: travelled_destination, label: Travelled segment destination, required: true}
+        - {key: departure_platform, label: Departure platform, required: false}
+        - {key: arrival_platform, label: Arrival platform, required: false}
+        - {key: actual_departure, label: Actual departure, required: true}
+        - {key: actual_arrival, label: Actual arrival, required: true}
+        - {key: scheduled_departure, label: Scheduled departure, required: true}
+        - {key: scheduled_arrival, label: Scheduled arrival, required: true}
+    - name: Media
+      fields:
+        - {key: image_url, label: Image URL, required: false}
+  output_sections:
+    - source: Record
+      heading:
+      items:
+        - {kind: field, field: train_id, label: Train ID}
+        - {kind: field, field: system_uid, label: System UID}
+        - {kind: field, field: model, label: Model}
+        - {kind: field, field: manufacturer, label: Manufacture}
+        - {kind: field, field: operator, label: Operator}
+    - source: Schedule
+      heading: Schedule
+      items:
+        - {kind: field, field: line, label: Line}
+        - kind: format
+          label: Service route
+          format: "{service_origin} -> {service_destination}"
+        - kind: format
+          label: Travelled Segment
+          format: "{travelled_origin} -> {travelled_destination}"
+        - kind: format
+          label: Platforms
+          format: "{departure_platform}; {arrival_platform}"
+        - kind: time
+          label: Time
+          format: "{actual_departure}-{actual_arrival}/{scheduled_departure}-{scheduled_arrival} ({status})"
+    - source: Media
+      heading:
+      items:
+        - {kind: image, field: image_url}
+
+about:
+  sections:
+    - name: Spec
+      fields:
+        - {key: top_speed, label: top speed, required: true}
+        - {key: manufacturer, label: manufacture, required: true}
+        - {key: power_type, label: power type, required: true}
+    - name: Media
+      fields:
+        - {key: image_url, label: Image URL, required: false}
+  output_sections:
+    - source: Spec
+      heading:
+      items:
+        - {kind: field, field: top_speed, label: top speed}
+        - {kind: field, field: manufacturer, label: manufacture}
+        - {kind: field, field: power_type, label: power type}
+    - source: Media
+      heading:
+      items:
+        - {kind: image, field: image_url}

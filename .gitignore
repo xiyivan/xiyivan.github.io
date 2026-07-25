@@ -4,3 +4,7 @@ _site
 .jekyll-metadata
 vendor
 _posts/template.markdown
+__pycache__/
+*.py[cod]
+.uv-cache/
+.ruff_cache/
